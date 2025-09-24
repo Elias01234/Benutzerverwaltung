@@ -1,0 +1,252 @@
+/* Grundlayout / Basisfarben */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--app-body-bg);
+    color: var(--app-text);
+    margin: 0;
+    padding: 0;
+}
+/* Überschriften */
+h1, h2 {
+    color: var(--app-text);
+}
+/* Formulare */
+form {
+    margin-bottom: 20px;
+}
+/* Formular-Eingabefelder */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px; 
+    margin: 5px 0 10px 0; 
+    border: 1px solid var(--bs-border-color, var(--app-border)); 
+    border-radius: 4px; 
+    background-color: var(--bs-body-bg, var(--app-card-bg)); 
+    color: var(--bs-body-color, var(--app-text)); 
+}
+/* Primärer Submit-Button (legacy Bereich) */
+form input[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+/* Karten (Bootstrap Override) */
+.card { background-color: var(--app-card-bg); color: var(--app-text); border-color: var(--app-border); }
+.card .card-header { background-color: var(--app-surface-alt); border-bottom: 1px solid var(--app-border); }
+form input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+/* Tabellen */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table.table { background-color: var(--app-card-bg); color: var(--app-text); }
+table, th, td {
+    border: 1px solid var(--bs-border-color, var(--app-border));
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: var(--bs-tertiary-bg, var(--app-surface-alt));
+}
+tr:nth-child(even) {
+    background-color: var(--bs-table-striped-bg, var(--app-row-alt));
+}
+/* Flash-Meldungen (alt) */
+.flash {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.flash.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+.flash.danger {
+    background-color: #f2dede;
+    color: #a94442;
+}
+.flash.info {
+    background-color: #d9edf7;
+    color: #31708f;
+}
+.error {
+    color: red;
+    margin-bottom: 20px;
+}
+.success {
+    color: green;
+    margin-bottom: 20px;
+}
+.info {
+    color: blue;
+    margin-bottom: 20px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--app-surface-alt);
+    margin-top: 20px;
+    border-top: 1px solid var(--app-border);
+}
+footer p {
+    margin: 0;
+    color: var(--app-muted);
+}
+
+
+/* Generische Buttons (alt, außerhalb Bootstrap) */
+button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button:hover {
+    background-color: #c9302c;
+}
+button.edit {
+    background-color: #5bc0de;
+}
+button.edit:hover {
+    background-color: #31b0d5;
+}
+button.change-password {
+    background-color: #f0ad4e;
+}
+button.change-password:hover {
+    background-color: #ec971f;
+}
+
+/* Abschnitt in Formularen */
+form section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid var(--app-border);
+    border-radius: 4px;
+    background-color: var(--app-surface-alt);
+}
+form section h2 {
+    margin-top: 0;
+}
+
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Fokuszustand Eingabefelder */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+/* Inline-Statusmeldungen */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: green;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.info-message {
+    color: blue;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Kennzeichnung Pflichtfelder */
+label.required::after {
+    content: " *";
+    color: red;
+}
+
+label.optional::after {
+    content: " (optional)";
+    color: var(--app-muted);
+}
+
+/* Gruppierung mit fieldset */
+fieldset {
+    border: 1px solid var(--app-border);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+fieldset legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+/* Links */
+a {
+    color: var(--app-link);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Design-Variablen */
+:root {
+    --app-card-bg: #ffffff;
+    --app-body-bg: #f8f9fa;
+    --app-text: #212529;
+    --app-surface-alt: #e9ecef;
+    --app-border: #dee2e6;
+    --app-row-alt: #f2f2f2;
+    --app-muted: #6c757d;
+    --app-link: #0d6efd;
+}
+
+/* Körper Anpassung (Überschreibt frühere Basis sofern nötig) */
+body {
+    background-color: var(--app-body-bg);
+    color: var(--app-text);
+}
+
+/* App-spezifische Karte */
+.app-card {
+    background: var(--app-card-bg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    border-radius: .5rem;
+}
+
+/* Globale Fokusanzeige */
+:focus {
+    outline: 2px solid #66afe9;
+    outline-offset: 2px;
+}
+
+/* Toast Layer */
+.toast-container {
+    z-index: 1080;
+}
+
+/* Maximalbreite Hauptcontainer */
+.app-container {
+    max-width: 960px;
+}
