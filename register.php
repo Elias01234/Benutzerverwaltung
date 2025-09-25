@@ -183,7 +183,7 @@ if ($conn->connect_error) {
                 <div class="text-center my-3 text-muted">oder</div>
                 <a href="google_login.php" class="btn btn-outline-dark w-100">
                   <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="20" height="20" class="me-2"/>
-                  Mit Google registrieren
+                  Mit Google anmelden
                 </a>
               <?php endif; ?>
 

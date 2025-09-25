@@ -26,5 +26,6 @@ $params = [
 ];
 
 $authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' . http_build_query($params); // Ziel-URL
+
 header('Location: ' . $authUrl); // Weiterleiten
 exit;

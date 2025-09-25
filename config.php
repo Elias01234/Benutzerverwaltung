@@ -10,7 +10,7 @@ function env(string $key, ?string $default = null): ?string {
 
 // Basis-URL
 if (!defined('BASE_URL')) {
-    define('BASE_URL', env('BENUTZER_BASE_URL', 'http://localhost'));
+    define('BASE_URL', 'http://localhost');
 }
 // Google OAuth Client ID
 if (!defined('GOOGLE_CLIENT_ID')) {
