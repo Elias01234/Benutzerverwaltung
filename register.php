@@ -41,6 +41,7 @@ if ($conn->connect_error) {
         $email = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
         $username = trim($_POST['username'] ?? '');
         $password = $_POST['password'] ?? '';
+        $passwordConfirm = $_POST['password_confirm'] ?? '';
 
         if (!$email) {
           $error = 'Ungültige E-Mail.';
@@ -48,6 +49,8 @@ if ($conn->connect_error) {
           $error = 'Benutzername muss 3 bis 50 Zeichen lang sein.';
         } elseif (mb_strlen($password) < 8) {
           $error = 'Passwort muss min. 8 Zeichen lang sein.';
+        } elseif (!hash_equals($password, $passwordConfirm)) {
+          $error = 'Passwörter stimmen nicht überein.';
         } else {
           // Passwort hashen + vorbereiten
           $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -174,6 +177,20 @@ if ($conn->connect_error) {
                   <div class="invalid-feedback">Mindestens 8 Zeichen</div>
                 </div>
 
+                <div class="mb-3">
+                  <label for="password_confirm" class="form-label">Passwort bestätigen</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password_confirm"
+                    name="password_confirm"
+                    required
+                    minlength="8"
+                    autocomplete="new-password"
+                  />
+                  <div class="invalid-feedback">Bitte Bestätigungspasswort eingeben.</div>
+                </div>
+
                 <button type="submit" class="btn btn-primary w-100">
                   <i class="bi bi-person-plus me-1"></i>Registrieren
                 </button>
@@ -199,6 +216,7 @@ if ($conn->connect_error) {
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js" integrity="sha512-+O0Z0H2cG+o3B7qZq9Uu4lI0d2hLrV8Q8Q+qkK0QWc7kKZkz9Jw1KQn2bDqgkD2c2VZQ0QmHnQy0z6Zl6k9b8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
       // Toast-Helfer + sofortige Anzeige von Server-Flash
       function showToast(message, type = 'info') {
@@ -279,6 +297,22 @@ if ($conn->connect_error) {
           inp.addEventListener('input', function(){ updateMeter(inp, meter); });
           inp.addEventListener('change', function(){ updateMeter(inp, meter); });
         });
+      })();
+      // Clientseitige Passwort-Bestätigung prüfen
+      (function(){
+        const form = document.querySelector('form.needs-validation');
+        if(!form) return;
+        const pw = document.getElementById('password');
+        const pwc = document.getElementById('password_confirm');
+        function validateMatch(){
+          if(pw.value && pwc.value && pw.value !== pwc.value){
+            pwc.setCustomValidity('Passwörter stimmen nicht überein');
+          } else {
+            pwc.setCustomValidity('');
+          }
+        }
+        pw.addEventListener('input', validateMatch);
+        pwc.addEventListener('input', validateMatch);
       })();
     </script>
   </body>

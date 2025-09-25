@@ -408,7 +408,8 @@ require_once __DIR__ . '/mail.php';
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js" integrity="sha512-+O0Z0H2cG+o3B7qZq9Uu4lI0d2hLrV8Q8Q+qkK0QWc7kKZkz9Jw1KQn2bDqgkD2c2VZQ0QmHnQy0z6Zl6k9b8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+  
+  <script>
   // Toast-Helfer (Bootstrap)
       function showToast(message, type = 'info') {
         const container = document.getElementById('toastContainer');

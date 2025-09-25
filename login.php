@@ -101,7 +101,7 @@ if ($conn->connect_error) {
                   <div class="invalid-feedback">Benutzername benötigt.</div>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-1">
                   <label for="password" class="form-label">Passwort</label>
                   <input
                     type="password"
@@ -114,7 +114,9 @@ if ($conn->connect_error) {
                   />
                   <div class="invalid-feedback">Passwort benötigt.</div>
                 </div>
-
+                <div class="mb-3 text-end">
+                  <a href="forgot_password.php" class="small">Passwort vergessen?</a>
+                </div>
                 <button type="submit" class="btn btn-primary w-100 mb-2">
                   <i class="bi bi-box-arrow-in-right me-1"></i>Anmelden
                 </button>
@@ -138,6 +140,7 @@ if ($conn->connect_error) {
     </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
       function showToast(message, type = 'info') {
         const container = document.getElementById('toastContainer');

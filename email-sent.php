@@ -31,6 +31,7 @@ unset($_SESSION['flash_success']);
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script></script>
   </body>
 </html>

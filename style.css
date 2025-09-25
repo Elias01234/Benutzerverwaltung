@@ -222,11 +222,7 @@ a:hover {
     --app-link: #0d6efd;
 }
 
-/* Körper Anpassung (Überschreibt frühere Basis sofern nötig) */
-body {
-    background-color: var(--app-body-bg);
-    color: var(--app-text);
-}
+/* Dark Mode entfernt */
 
 /* App-spezifische Karte */
 .app-card {
