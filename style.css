@@ -222,8 +222,6 @@ a:hover {
     --app-link: #0d6efd;
 }
 
-/* Dark Mode entfernt */
-
 /* App-spezifische Karte */
 .app-card {
     background: var(--app-card-bg);
