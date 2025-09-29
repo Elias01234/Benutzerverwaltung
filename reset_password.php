@@ -1,6 +1,5 @@
 <?php
 // Datei: Passwort zurücksetzen mittels Token
-// Sicherheit TODOs:
 // - Optional Logging fehlerhafter Tokenversuche
 // - Session invalidieren / alle aktiven Sessions des Nutzers invalidieren (zusätzliche Tabelle nötig)
 // - Passwort-Historie verhindern (optional)
