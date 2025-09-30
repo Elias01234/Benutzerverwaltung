@@ -438,20 +438,7 @@ require_once __DIR__ . '/mail.php';
         if (!node) return;
         showToast(node.dataset.msg || '', node.dataset.type || 'info');
       })();
-
-  // Form-Submit: Button sperren + Spinner
-      (function(){
-        document.addEventListener('submit', function(e){
-          const btn = e.target.querySelector('[type="submit"]');
-          if (btn && !btn.dataset.loading) {
-            btn.dataset.loading = '1';
-            btn.disabled = true;
-            const original = btn.innerHTML;
-            btn.dataset.original = original;
-            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Bitte warten…';
-          }
-        }, true);
-      })();
+  
 
   // Passwort-Stärkeanzeige (zxcvbn + Fallback)
       (function(){
